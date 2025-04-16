@@ -54,7 +54,7 @@ const OrderCard = ({
                     size="sm"
                   />
                 ) : (
-                  <TextOverflowTooltip text={title} />
+                  <TextOverflowTooltip text={editedTitle} />
                 )}
               </Col>
             )}
@@ -89,7 +89,7 @@ const OrderCard = ({
                   size="sm"
                 />
               ) : (
-                new Date(date).toLocaleDateString()
+                new Date(editedDate).toLocaleDateString()
               )}
             </Col>
 

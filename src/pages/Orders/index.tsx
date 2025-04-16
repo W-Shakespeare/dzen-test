@@ -62,10 +62,10 @@ const OrdersContainer = () => {
     deleteOrder(id)
       .unwrap()
       .then(() => {
-        toast.success("Order deleted successfully");
+        toast.success("Заказ удален");
       })
       .catch(() => {
-        toast.error("Failed to delete order");
+        toast.error("Ошибка удаления заказа");
       });
   };
 

@@ -13,7 +13,7 @@ enum Headers {
 }
 // process.env.REACT_APP_API_URL_PRODUCTION
 const baseQuery = fetchBaseQuery({
-  baseUrl: `http://localhost:3001`,
+  baseUrl: `https://test-todo-be.onrender.com`,
   paramsSerializer: (params) => {
     const queryParams = new URLSearchParams();
 
