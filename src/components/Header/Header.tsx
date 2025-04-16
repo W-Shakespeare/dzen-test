@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { PagesEnum } from "../../routes";
 import { ActiveUsers } from "./components/DateTimeBlock/ActiveUsers/ActiveUsers";
 
-export const socket = io("http://localhost:3001", {
+export const socket = io(process.env.REACT_APP_API_URL_PRODUCTION, {
   autoConnect: false,
 });
 

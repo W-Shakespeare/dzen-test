@@ -11,9 +11,9 @@ enum Headers {
   Authorization = "authorization",
   Accept = "Accept",
 }
-// process.env.REACT_APP_API_URL_PRODUCTION
+
 const baseQuery = fetchBaseQuery({
-  baseUrl: `https://test-todo-be.onrender.com`,
+  baseUrl: process.env.REACT_APP_API_URL_PRODUCTION,
   paramsSerializer: (params) => {
     const queryParams = new URLSearchParams();
 
