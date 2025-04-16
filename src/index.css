@@ -1,3 +1,8 @@
+html{
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +10,176 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+#root{
+
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+.card-order-trash, 
+.card-order-product {
+  cursor: pointer;
+}
+
+.delay-opacity{
+  transition: opacity ease 0.75s 0.75;
+}
+
+.card-order-close{
+  width: 0px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.card-order-open{
+  opacity: 1;
+}
+
+.product-circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #198754;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+
+.order-product-modal .modal-content {
+  justify-content: space-between;
+}
+
+.order-product-modal .modal-content .card:hover {
+  background-color: aliceblue;
+}
+
+.selected-card {
+  background-color: aliceblue;
+}
+
+.order-product-modal .modal-body {
+  max-height: 400px; 
+  overflow-y: auto;
+
+}
+
+.order-product-modal .order-modal-tab-form .modal-body{
+  display: flex;
+  justify-content: center;
+}
+
+
+.order-product-modal .modal-footer{
+  height: 60px;
+}
+
+.order-product-modal .row {
+  --bs-gutter-x: 0 !important;
+  margin-left: 0px !important;
+}
+
+.order-product-tabs {
+  width: 100% !important;
+  height: 43px !important;
+}
+
+
+.product-trash{
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 875px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 425px) {
+  html{
+    font-size: 11px;
+  }
+}
+
+.order-modal-form{
+  max-width: 80%;
+  width: 100%;
+}
+
+.order-modal .row {
+  --bs-gutter-x: 0 !important;
+  margin-left: 0px !important;
+}
+
+.order-modal .order-form-tab  .modal-body{
+  display: flex;
+  justify-content: center;
+}
+
+.order-modal .modal-body form {
+  max-width: 80%;
+  width: 100%;
+} 
+
+.order-btn{
+  display: flex;
+  align-items: center;
+  transform: rotate(90deg);
+}
+
+.open-order-btn :{
+  transform: rotate(90deg);
+}
+.close-order-btn{
+  transform: rotate(270deg);
 }

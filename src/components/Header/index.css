@@ -1,0 +1,80 @@
+.header{
+
+padding: 0px 150px 0px 150px;
+width: 100%;
+height: 80px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+display: flex;
+justify-content: space-between;
+width: 100%;
+align-items: center;
+}
+
+
+
+  @media (max-width: 1200px) {
+    .header {
+      padding: 0 120px;
+      font-size: 15px;
+    }
+    .header .row {
+      --bs-gutter-x: 1rem;
+    }
+  }
+  
+  @media (max-width: 875px) {
+    .header {
+      padding: 0 10px;
+      font-size: 14px;
+    }
+    .header .row {
+      --bs-gutter-x: 0.7rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      padding: 0px;
+      font-size: 13px;
+    }
+    .header .row {
+      --bs-gutter-x: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 425px) {
+    .header {
+      padding: 0 0px;
+      font-size: 11px;
+    }
+    .header .row {
+      --bs-gutter-x: 0.3rem;
+    }
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ff7700;
+  }
+  
+  .fox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fox-svg {
+    transition: transform 0.2s ease;
+  }
+  
+
+  .logout-container{
+    cursor: pointer;
+    width: max-content;
+    position: absolute;
+    right: 10px;
+  }

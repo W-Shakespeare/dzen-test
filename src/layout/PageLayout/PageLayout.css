@@ -1,0 +1,29 @@
+.main{
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 50px !important;
+    height: 100%;
+    overflow: scroll;
+    font-size: 16px;
+    position: relative;
+}
+
+
+@media (max-width: 1200px) {
+    .main .row {
+      --bs-gutter-x: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main .row {
+      --bs-gutter-x: 0.7rem;
+    }
+  }
+  
+  @media (max-width: 425px) {
+    .main .row {
+      --bs-gutter-x: 0.5rem;
+    }
+  }
+  

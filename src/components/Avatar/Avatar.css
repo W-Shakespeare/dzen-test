@@ -1,0 +1,36 @@
+.avatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; 
+    border-radius: 50%;
+  }
+
+  .avatar-container{
+    position: relative;
+    margin-top: 20px;
+    height: max-content;
+  }
+
+  .avatar-settings-icon {
+    height: 20px; 
+    width: 20px;
+  }
+
+
+  .avatar-settings-container{
+    padding: 0px;
+    width: 100%;
+    right: 32px;
+    top: 82px;
+    position: absolute;
+    height: 32px; 
+    width: 32px;
+    border-radius: 50%;
+    background: #e9ecef; 
+    z-index: 10; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
