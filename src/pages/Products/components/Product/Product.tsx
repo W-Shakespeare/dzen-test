@@ -1,4 +1,4 @@
-import { Card, Col, Image, Row } from "react-bootstrap";
+import { Card, Col, Container, Image, Row } from "react-bootstrap";
 import { IProduct } from "../../../../models/IProduct";
 import TextOverflowTooltip from "../../../../components/TextOverflowTooltip/TextOverflowTooltip";
 import dayjs from "dayjs";
@@ -23,28 +23,49 @@ export const Product: React.FC<IProductProps> = ({
 
   return (
     <Card className="p-md-2 mb-3">
-      <Row className="align-items-center">
-        <Col md="1" xs="12" className="ms-3 d-flex justify-content-center mt-1">
+      <Row className="align-items-center justify-content-between">
+        <Col
+          md="1"
+          xs="12"
+          sm="12"
+          className="ms-1 d-flex justify-content-center mt-1"
+        >
           <div
             style={{ background: isNew ? "#198754" : "gray" }}
             className="product-circle  m-2"
           ></div>
         </Col>
-        <Col xs="12" md="2" className="d-flex justify-content-center m-1">
+        <Col
+          xs="12"
+          md="2"
+          sm="12"
+          className="d-flex justify-content-center m-1"
+        >
           <Image src={photo} width={70} height={70} fluid />
         </Col>
-        <Col md="3" xs="12" className="d-flex justify-content-center m-1">
-          <Row>
-            <Col xs="12" className="d-flex justify-content-center m-1">
-              <TextOverflowTooltip text={title} />
-            </Col>
-            <Col xs="12" className="d-flex justify-content-center m-1">
-              <span>{serialNumber}</span>
-            </Col>
-          </Row>
+        <Col xs="12" md="3" className="d-flex justify-content-center m-1">
+          <Container>
+            <Row>
+              <Col
+                xs="12"
+                sm="12"
+                className="d-flex justify-content-center m-1"
+              >
+                <TextOverflowTooltip text={title} />
+              </Col>
+              <Col xs="12" className="d-flex justify-content-center m-1">
+                <span>{serialNumber}</span>
+              </Col>
+            </Row>
+          </Container>
         </Col>
 
-        <Col xs="12" md="2" className="d-flex justify-content-center m-1">
+        <Col
+          xs="12"
+          md="2"
+          sm="12"
+          className="d-flex justify-content-center m-1"
+        >
           <Row>
             <Col xs="12" className="d-flex justify-content-center m-1">
               <span>c {dayjs(guarantee.start).format("DD/MM/YYYY")}</span>
@@ -55,22 +76,39 @@ export const Product: React.FC<IProductProps> = ({
           </Row>
         </Col>
 
-        <Col md="1" xs="12" className="d-flex justify-content-center m-1">
+        <Col
+          md="1"
+          xs="12"
+          sm="12"
+          className="d-flex justify-content-center m-1"
+        >
           <span>{isNew ? "Новый" : "Бу"}</span>
         </Col>
 
-        <Col md="1" xs="12" className="d-flex justify-content-center m-1">
-          <Row>
-            <Col xs="12" className="d-flex justify-content-center m-1">
-              <span>{`${priceUsd?.value} `} usd</span>
-            </Col>
-            <Col xs="12" className="d-flex justify-content-center m-1">
-              <span>{`${priceUah?.value}`} uah</span>
-            </Col>
-          </Row>
+        <Col
+          md="2"
+          xs="12"
+          sm="12"
+          className="d-flex justify-content-center m-1"
+        >
+          <Container>
+            <Row>
+              <Col xs="12" className="d-flex justify-content-center m-1">
+                <TextOverflowTooltip text={`${priceUsd?.value} USD`} />
+              </Col>
+              <Col xs="12" className="d-flex justify-content-center m-1">
+                <TextOverflowTooltip text={`${priceUah?.value} UAH`} />
+              </Col>
+            </Row>
+          </Container>
         </Col>
 
-        <Col xs="12" md="1" className="d-flex justify-content-center mt-4 mb-4">
+        <Col
+          xs="12"
+          md="1"
+          sm="12"
+          className="d-flex justify-content-center mt-4 mb-4 trash-container"
+        >
           <Trash3 className="product-trash" onClick={() => onDelete(_id)} />
         </Col>
       </Row>

@@ -183,3 +183,44 @@ img {
 .close-order-btn{
   transform: rotate(270deg);
 }
+
+.products-page .card div{
+  padding: 2px;
+}
+
+.products-page .card:hover .trash-container{
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+
+.trash-container{
+  position: absolute;
+  right: -10px;
+  top:30%;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.products-page .card {
+  padding-right:25px !important;
+}
+
+
+@media (max-width: 768px) {
+.products-page h2{
+  text-align: center;
+}
+
+
+.products-page .card {
+  padding-bottom:30px !important;
+}
+.products-page .card .trash-container {
+  top: unset;
+  bottom: -10px;
+  right: 5px;
+}
+}

@@ -39,13 +39,7 @@ const OrderCard = ({
         >
           <Row className="align-items-center">
             {!isShowProductByOrder && (
-              <Col
-                lg="4"
-                sm="2"
-                className={
-                  isShowProductByOrder ? "card-order-close" : "card-order-open"
-                }
-              >
+              <Col lg="4" sm="2">
                 {isEditing ? (
                   <Form.Control
                     type="text"
@@ -95,19 +89,13 @@ const OrderCard = ({
 
             <Col lg={isShowProductByOrder ? 2 : 1} sm="2">
               <Row>
-                <Col xs="12">{totalUSD} USD</Col>
-                <Col xs="12">{totalOtherCurrency} UAH</Col>
+                <TextOverflowTooltip text={`${totalUSD} USD`} />
+                <TextOverflowTooltip text={`${totalOtherCurrency} USH`} />
               </Row>
             </Col>
 
             {!isShowProductByOrder && (
-              <Col
-                lg="1"
-                sm="1"
-                className={
-                  isShowProductByOrder ? "card-order-close" : "card-order-open"
-                }
-              >
+              <Col lg="1" sm="1">
                 <Trash3
                   className="card-order-trash"
                   onClick={() => onDelete(_id)}

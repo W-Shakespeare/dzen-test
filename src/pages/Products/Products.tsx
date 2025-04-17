@@ -29,10 +29,10 @@ const Products = () => {
   return (
     <>
       {isFetching && <Loading />}
-      <Row>
+      <Row className="products-page">
         <h2>Продукты</h2>
 
-        <Col xs="3" className="mb-3">
+        <Col xs="12" className="mb-3">
           <ProductTypeSelect
             onSelect={(type: string) => setSelectedType(type)}
           />
