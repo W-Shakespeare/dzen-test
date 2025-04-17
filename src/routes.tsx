@@ -1,12 +1,13 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
-import SignIn from "./pages/SignIn/SignIn";
-import SignUp from "./pages/SignUp/SignUp";
-import Orders from "./pages/Orders";
-import Products from "./pages/Products/Products";
+import { useEffect, Suspense, lazy } from "react";
 import PageLayout from "./layout/PageLayout/PageLayout";
 import { useTypedSelector } from "./hooks/useTypedSelector";
-import { useEffect } from "react";
 import { selectIsAuth } from "./redux/Auth";
+
+const SignIn = lazy(() => import("./pages/SignIn/SignIn"));
+const SignUp = lazy(() => import("./pages/SignUp/SignUp"));
+const Orders = lazy(() => import("./pages/Orders"));
+const Products = lazy(() => import("./pages/Products/Products"));
 
 export enum PagesEnum {
   SignIn = "/signin",
@@ -17,7 +18,6 @@ export enum PagesEnum {
 
 function AppRoutes() {
   const navigate = useNavigate();
-
   const IsAuth = useTypedSelector(selectIsAuth);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function AppRoutes() {
   }, [IsAuth]);
 
   return (
-    <>
+    <Suspense fallback={<div>Загрузка...</div>}>
       <Routes>
         {IsAuth && (
           <Route path="/" element={<PageLayout />}>
@@ -37,7 +37,7 @@ function AppRoutes() {
         <Route path={PagesEnum.SignUp} element={<SignUp />} />
         <Route path="*" element={<main>Page not found</main>} />
       </Routes>
-    </>
+    </Suspense>
   );
 }
 
